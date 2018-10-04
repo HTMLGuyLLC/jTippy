@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e8f4fdb-91d5-43e9-ae30-c5d0f05b5f35" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jTippy.css" beforeDir="false" afterPath="$PROJECT_DIR$/jTippy.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jTippy.js" beforeDir="false" afterPath="$PROJECT_DIR$/jTippy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jTippy.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/jTippy.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jTippy.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/jTippy.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -25,22 +29,22 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="LICENSE" value="1" />
-          <entry key="css" value="3" />
-          <entry key="html" value="1" />
-          <entry key="js" value="7" />
-          <entry key="json" value="4" />
-          <entry key="md" value="4" />
+          <entry key="css" value="7" />
+          <entry key="html" value="3" />
+          <entry key="js" value="9" />
+          <entry key="json" value="5" />
+          <entry key="md" value="5" />
           <entry key="php" value="3" />
           <entry key="twig" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="3" />
-          <entry key="HTML" value="1" />
-          <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="7" />
-          <entry key="Markdown" value="4" />
+          <entry key="CSS" value="7" />
+          <entry key="HTML" value="3" />
+          <entry key="JSON" value="5" />
+          <entry key="JavaScript" value="9" />
+          <entry key="Markdown" value="5" />
           <entry key="PHP" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Scratch" value="1" />
@@ -49,21 +53,21 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="13" />
-          <entry key="html" value="785" />
+          <entry key="css" value="103" />
+          <entry key="html" value="957" />
           <entry key="js" value="3773" />
-          <entry key="json" value="20" />
-          <entry key="md" value="593" />
+          <entry key="json" value="23" />
+          <entry key="md" value="595" />
           <entry key="php" value="976" />
           <entry key="twig" value="170" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="13" />
-          <entry key="HTML" value="790" />
-          <entry key="JSON" value="20" />
-          <entry key="JavaScript" value="3781" />
+          <entry key="CSS" value="103" />
+          <entry key="HTML" value="962" />
+          <entry key="JSON" value="23" />
+          <entry key="JavaScript" value="3783" />
           <entry key="Markdown" value="580" />
           <entry key="Scratch" value="976" />
           <entry key="Twig" value="170" />
@@ -74,22 +78,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jTippy.js">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="119" column="52" selection-end-line="482" selection-end-column="11" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="64">
+              <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+            <state relative-caret-position="265">
+              <caret line="183" column="22" lean-forward="true" selection-start-line="183" selection-start-column="22" selection-end-line="183" selection-end-column="22" />
+              <folding>
+                <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,7 +104,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>show_on-click</find>
       <find>jc-</find>
       <find>question</find>
       <find>buttons</find>
@@ -116,7 +121,6 @@
       <find>onClickOutside</find>
       <find>toggle_</find>
       <find>trigger_event</find>
-      <find>tight-fit</find>
       <find>on('focus</find>
       <find>toggle_on</find>
       <find>show_on</find>
@@ -124,6 +128,12 @@
       <find>hide_on</find>
       <find>jConfirm</find>
       <find>dataAttr</find>
+      <find>theme</find>
+      <find>black</find>
+      <find>white-theme</find>
+      <find>flex</find>
+      <find>tight-fit</find>
+      <find>tight</find>
     </findStrings>
     <replaceStrings>
       <replace>jt-</replace>
@@ -139,14 +149,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.html.twig" />
-        <option value="$PROJECT_DIR$/jTippy.css" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.php" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/jTippy.min.css" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/jTippy.js" />
+        <option value="$PROJECT_DIR$/jTippy.css" />
+        <option value="$PROJECT_DIR$/jTippy.min.css" />
         <option value="$PROJECT_DIR$/jTippy.min.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -164,7 +174,7 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1523" />
@@ -228,10 +238,10 @@
     </option>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1523" extended-state="0" />
+    <frame x="0" y="23" width="1920" height="1123" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14323749" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14323749" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -246,7 +256,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.32960597" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.32960597" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,14 +287,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jTippy.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1376">
-          <caret line="86" column="119" lean-forward="true" selection-start-line="86" selection-start-column="119" selection-end-line="86" selection-end-column="119" />
+        <state>
+          <caret column="4671" selection-start-column="4671" selection-end-column="4671" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jTippy.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="7239" selection-start-line="7" selection-start-column="7239" selection-end-line="7" selection-end-column="7239" />
           <folding>
-            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#10838#10842#0" expanded="true" />
-            <element signature="e#10940#10944#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -292,54 +310,46 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="455">
-            <caret line="59" column="3" lean-forward="true" selection-start-line="59" selection-start-column="3" selection-end-line="59" selection-end-column="3" />
+          <first_editor relative-caret-position="309">
+            <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jTippy.min.css">
+    <entry file="file://$PROJECT_DIR$/jTippy.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3574" selection-start-column="3574" selection-end-column="3574" />
+        <state relative-caret-position="170">
+          <caret line="278" column="30" lean-forward="true" selection-end-line="474" selection-end-column="11" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/jTippy.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="1" lean-forward="true" selection-end-line="285" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jTippy.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="7430" selection-start-line="7" selection-start-column="7430" selection-end-line="7" selection-end-column="7430" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jTippy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="119" column="52" selection-end-line="482" selection-end-column="11" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="170">
+          <caret line="37" column="31" selection-end-line="375" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        <state relative-caret-position="64">
+          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="183" column="22" lean-forward="true" selection-start-line="183" selection-start-column="22" selection-end-line="183" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

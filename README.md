@@ -73,7 +73,7 @@ $(function(){
         trigger: 'hoverfocus',
         //string ('auto','top','bottom','left','right'): preferred location of the tooltip (defaults to auto if no space)
         position: 'auto',
-        //string ('black', 'white')
+        //string ('black', 'lt-gray', 'white', 'blue', 'green', 'red')
         theme: 'black',
         //string ('tiny', 'small', 'medium', 'large')
         size: 'small',

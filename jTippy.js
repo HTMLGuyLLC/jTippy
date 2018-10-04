@@ -287,14 +287,6 @@
                 //first try to fit it with the preferred position
                 let [arrow_dir, elem_width, tooltip_width, tooltip_height, left, top] = helper.calculateSafePosition(helper.position);
 
-                //if couldn't fit, add class tight-fit and run again
-                if( typeof left === 'undefined' )
-                {
-                    helper.positionDebug('Couldn\'t fit preferred position, downsizing and trying again');
-                    helper.tooltip.addClass('jt-tight-fit');
-                    [arrow_dir, elem_width, tooltip_width, tooltip_height, left, top] = helper.calculateSafePosition(helper.position);
-                }
-
                 //if still couldn't fit, switch to auto
                 if( typeof left === 'undefined' && helper.position !== 'auto' )
                 {
