@@ -83,7 +83,7 @@ $(function(){
         class: '',
         //boolean: if true, when this tooltip is triggered, all others will hide
         singleton: true,
-        //boolean: if true, when clicking outside a tooltip that has trigger:"click", it will hide that tooltip
+        //boolean: if true and trigger: 'click', when clicking outside the tooltip, it will be hidden
         close_on_outside_click: true,
   }).on('jt-show', function(e, tooltip){
       //triggered on show of tooltip
