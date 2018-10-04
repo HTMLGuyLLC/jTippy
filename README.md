@@ -15,12 +15,13 @@ jQuery tooltip plugin. Easy to use and configure with excellent responsive place
 
 Features
 =======
-* Backdrops (black, white, blurred)
+* Multiple Triggers (click, hover, focus, hoverfocus)
+* Backdrops (black, white, blurred) - Only apply to trigger:'click'
 * Themes (black, white)
 * Sizes (tiny, small, medium, large)
-* Responsive (prefers the supplied position, if it doesn't fit, it attempts to make it smaller by stacking the question and buttons, if it doesn't fit, it tries the "auto" setting, if it still doesn't fit, it shows as a modal in the middle of the screen)
+* Responsive (prefers the specified position, if it doesn't fit, it attempts to make it smaller by stacking the question and buttons, if it doesn't fit, it tries the "auto" setting, if it still doesn't fit, it shows as a modal in the middle of the screen)
+* Tooltip hide/show events
 * No-conflict CSS
-* Events like tooltip hide/show for extra control
 
 Getting the files
 =======
