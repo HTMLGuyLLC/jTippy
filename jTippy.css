@@ -136,13 +136,30 @@
 .jt-arrow-top.jt-arrow-hug-left.jt-arrow-super-hug,
 .jt-arrow-top.jt-arrow-hug-right.jt-arrow-super-hug
 {
-    top: -27px;
+    top: -30px;
 }
 /* Arrow - Get really close to the left because the button is small - need to adjust for border radius */
 .jt-arrow-bottom.jt-arrow-hug-left.jt-arrow-super-hug,
 .jt-arrow-bottom.jt-arrow-hug-right.jt-arrow-super-hug
 {
     top: auto;
+    bottom: -30px;
+}
+
+.jt-tiny .jt-arrow-hug-left.jt-arrow-super-hug,
+.jt-tiny .jt-arrow-hug-right.jt-arrow-super-hug
+{
+    bottom: -21px;
+}
+
+.jt-black-theme .jt-arrow-top.jt-arrow-hug-left.jt-arrow-super-hug,
+.jt-black-theme .jt-arrow-top.jt-arrow-hug-right.jt-arrow-super-hug
+{
+    top: -27px;
+}
+.jt-black-theme .jt-arrow-bottom.jt-arrow-hug-left.jt-arrow-super-hug,
+.jt-black-theme .jt-arrow-bottom.jt-arrow-hug-right.jt-arrow-super-hug
+{
     bottom: -28px;
 }
 
@@ -172,17 +189,6 @@
 .jt-white-theme .jt-arrow-right
 {
     border-left-color: #e4e4e4;
-}
-
-.jt-white-theme .jt-arrow-top.jt-arrow-hug-left.jt-arrow-super-hug,
-.jt-white-theme .jt-arrow-top.jt-arrow-hug-right.jt-arrow-super-hug
-{
-    top: -30px;
-}
-.jt-white-theme .jt-arrow-bottom.jt-arrow-hug-left.jt-arrow-super-hug,
-.jt-white-theme .jt-arrow-bottom.jt-arrow-hug-right.jt-arrow-super-hug
-{
-    bottom: -30px;
 }
 
 /* LT Gray theme */
