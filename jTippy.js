@@ -125,7 +125,7 @@
                     helper.dom_wrapped.on('blur', helper.hide);
 
                     helper.dom_wrapped.on('mouseenter', helper.show);
-                    helper.dom_wrapped.on('mouseleave', helper.hide);
+                    helper.dom_wrapped.on('mouseleave', helper.hoverfocusHide);
                 }
 
                 //attach to dom for easy access later
@@ -133,6 +133,15 @@
 
                 //return dom for chaining of event handlers and such
                 return helper.dom;
+            },
+            //prevent hiding a tooltip on mouseleave if the elemnent is still focused
+            hoverfocusHide: function(){
+                if( typeof document.activeElement !== 'undefined' &&
+                    document.activeElement.length === 1 &&
+                    document.activeElement[0] !== helper.dom )
+                {
+                    helper.hide();
+                }
             },
             //on click of element, prevent default
             preventDefaultHandler: function(e){
