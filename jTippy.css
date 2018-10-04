@@ -1,0 +1,286 @@
+/* Backdrops */
+.jt-backdrop
+{
+    position: fixed;
+    z-index: 999998;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+/* Black backdrop */
+.jt-backdrop.jt-black-backdrop
+{
+    background: rgba(0,0,0,.5);
+}
+/* White backdrop */
+.jt-backdrop.jt-white-backdrop
+{
+    background: rgba(255,255,255,.5);
+}
+/* Blur everything in body except the tooltip */
+/* @todo: Find a way to NOT blur the clicked element. Turns out that's not easy. */
+.jt-blurred-body > *:not(.jtippy)
+{
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+}
+
+/* Confirm tooltip */
+.jtippy
+{
+    position: absolute;
+    z-index: 999999;
+    background: #444444;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+/* Centers the tooltip on screens where it won't fit */
+.jt-centered
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
+.jt-tight-fit .jt-title
+{
+    margin-top: 0px;
+    text-align: center;
+}
+.jt-tiny.jt-tight-fit
+{
+    padding: 2px 15px;
+}
+.jt-tight-fit .jt-title
+{
+    margin: 0px 0px 5px 0px;
+}
+
+.jt-title
+{
+    flex: 1;
+    margin: 5px 20px 5px 10px;
+    font-size: 1em;
+    line-height: 1.6em;
+    text-align: center;
+    color: #fff;
+    font-weight: 800;
+    padding: 5px 0px;
+    white-space: nowrap;
+}
+
+/* Arrow */
+.jt-arrow {
+    border: 15px solid rgba(232, 232, 232, 0);
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    margin-left: -15px;
+}
+/* Arrow - Top */
+.jt-arrow-top
+{
+    border-bottom-color: #444444;
+    bottom: 100%;
+    left: 50%;
+    top: auto;
+    right: auto;
+}
+/* Arrow - Bottom */
+.jt-arrow-bottom
+{
+    border-top-color: #444444;
+    top: 100%;
+    left: 50%;
+    bottom: auto;
+    right: auto;
+}
+/* Arrow - Left */
+.jt-arrow-left
+{
+    border-right-color: #444444;
+    border-width: 16px;
+    left: -15px;
+    right: auto;
+    bottom: auto;
+    top: 50%;
+    margin-top: -15px;
+}
+/* Arrow - Right */
+.jt-arrow-right
+{
+    border-left-color: #444444;
+    right: -30px;
+    left: auto;
+    bottom: auto;
+    border-width: 15px;
+    top: 50%;
+    margin-top: -15px;
+}
+/* Arrow - Hug Left */
+.jt-arrow-hug-left
+{
+    left: 30px;
+    right: auto;
+}
+/* Arrow - Hug Right */
+.jt-arrow-hug-right
+{
+    right: 30px;
+    left: auto;
+}
+
+/* Arrow - Get really close to the left because the button is small */
+.jt-arrow-hug-left.jt-arrow-super-hug
+{
+    left: 15px;
+    right: auto;
+}
+/* Arrow - Get really close to the right because the button is small  */
+.jt-arrow-hug-right.jt-arrow-super-hug
+{
+    right: 1px;
+    left: auto;
+}
+/* Arrow - Get really close to the left because the button is small - need to adjust for border radius */
+.jt-arrow-top.jt-arrow-hug-left.jt-arrow-super-hug,
+.jt-arrow-top.jt-arrow-hug-right.jt-arrow-super-hug
+{
+    top: -27px;
+}
+/* Arrow - Get really close to the left because the button is small - need to adjust for border radius */
+.jt-arrow-bottom.jt-arrow-hug-left.jt-arrow-super-hug,
+.jt-arrow-bottom.jt-arrow-hug-right.jt-arrow-super-hug
+{
+    top: auto;
+    bottom: -28px;
+}
+
+
+/* White theme */
+.jt-white-theme
+{
+    background: #fff;
+    border: 2px solid #c7c7c7;
+}
+.jt-white-theme .jt-title
+{
+    color: #333;
+}
+.jt-white-theme .jt-arrow-top
+{
+    border-bottom-color: #c7c7c7;
+}
+.jt-white-theme .jt-arrow-bottom
+{
+    border-top-color: #c7c7c7;
+}
+.jt-white-theme .jt-arrow-left
+{
+    border-right-color: #c7c7c7;
+}
+.jt-white-theme .jt-arrow-right
+{
+    border-left-color: #c7c7c7;
+}
+
+.jt-white-theme .jt-arrow-top.jt-arrow-hug-left.jt-arrow-super-hug,
+.jt-white-theme .jt-arrow-top.jt-arrow-hug-right.jt-arrow-super-hug
+{
+    top: -30px;
+}
+.jt-white-theme .jt-arrow-bottom.jt-arrow-hug-left.jt-arrow-super-hug,
+.jt-white-theme .jt-arrow-bottom.jt-arrow-hug-right.jt-arrow-super-hug
+{
+    bottom: -30px;
+}
+
+/* Large tooltip */
+.jt-large
+{
+    font-size: 18px;
+}
+
+/* Medium tooltip */
+.jt-medium
+{
+    font-size: 14px;
+}
+
+/* Small tooltip */
+.jt-small
+{
+    font-size: 12px;
+    padding: 5px;
+}
+.jt-small .jt-title
+{
+    margin: 2px 8px;
+    line-height: 1.9em;
+}
+
+/* Tiny tooltip */
+.jt-tiny
+{
+    padding: 2px 5px;
+    font-size: 10px;
+}
+.jt-tiny .jt-title
+{
+    margin: 4px 7px;
+}
+.jt-tiny .jt-button
+{
+    margin: 0px 3px;
+}
+.jt-tiny .jt-arrow
+{
+    border-width: 10px;
+    margin-left: -10px;
+}
+.jt-tiny .jt-arrow-left
+{
+    left: -10px;
+    margin-top: -10px;
+}
+.jt-tiny .jt-arrow-right
+{
+    right: -20px;
+    margin-top: -10px;
+}
+/**
+@todo: Rewrite arrows in JS since they are so complicated in CSS
+ */
+.jt-tiny .jt-arrow-bottom.jt-arrow-hug-left.jt-arrow-super-hug,
+.jt-tiny .jt-arrow-top.jt-arrow-hug-left.jt-arrow-super-hug
+{
+    left: 11px;
+}
+.jt-tiny .jt-arrow-bottom.jt-arrow-hug-right.jt-arrow-super-hug,
+.jt-tiny .jt-arrow-top.jt-arrow-hug-right.jt-arrow-super-hug
+{
+    right: 1px;
+}
+.jt-tiny.jt-white-theme .jt-arrow-top.jt-arrow-hug-left.jt-arrow-super-hug,
+.jt-tiny.jt-white-theme .jt-arrow-top.jt-arrow-hug-right.jt-arrow-super-hug
+{
+    top: -18px;
+}
+.jt-tiny.jt-white-theme .jt-arrow-bottom.jt-arrow-hug-left.jt-arrow-super-hug,
+.jt-tiny.jt-white-theme .jt-arrow-bottom.jt-arrow-hug-right.jt-arrow-super-hug
+{
+    bottom: -21px;
+}
+.jt-tiny.jt-black-theme .jt-arrow-bottom.jt-arrow-hug-left.jt-arrow-super-hug,
+.jt-tiny.jt-black-theme .jt-arrow-bottom.jt-arrow-hug-right.jt-arrow-super-hug
+{
+    bottom: -18px;
+}

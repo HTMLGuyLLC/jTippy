@@ -1,0 +1,245 @@
+<!-- This page is admittedly lazy/crappy. Don't think the plugin shares it's quality, because it doesn't -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>jTippy - jQuery Tooltip Plugin</title>
+
+    <meta property="og:title" content="jTippy - jQuery Tooltip Plugin" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://htmlguyllc.github.io/jTippy/" />
+    <meta property="og:image" content="example.png" />
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:site" content="@HTMLGuyLLC">
+
+    <meta name="description" content="jQuery tooltip plugin">
+
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link href="example.png" rel="shortcut icon" type="image/x-icon">
+    <link href="example.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
+    <link rel="stylesheet" href="jTippy.css">
+    <style>
+        body,html
+        {
+            height: 100%;
+            margin: 0px;
+            font-family: Arial;
+        }
+    </style>
+</head>
+<body class="body text-center">
+
+<!-- Page title -->
+<div style="margin-top: 50px;">
+    <h1>jTippy - jQuery Tooltips</h1>
+    <a href="https://github.com/HTMLGuyLLC/jTippy" class="btn btn-success">Docs and Code on Github</a>
+    <a href="https://htmlguy.com" target="_blank" class="btn btn-secondary">Created by HTMLGuy</a>
+    <br><br>
+    Related:
+    <a href="https://htmlguyllc.github.io/jAlert/">jAlert</a> |
+    <a href="https://htmlguyllc.github.io/jTimeout/">jTimeout</a> |
+    <a href="https://htmlguyllc.github.io/jConfirm/">jConfirm</a>
+</div>
+
+<div style="margin-top: 20px">
+    <form action="https://www.paypal.com/cgi-bin/webscr" id="paypal" method="post" target="_blank" style="font-size: .85em;line-height: 1.4em;margin-bottom: 10px;margin-top: 10px;"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="9H3AX8KJJWS6J"><a href="#" onclick="javascript:getElementById('paypal').submit();" class="btn btn-sm"><i class="fa fa-beer"></i> Donations are appreciated (via PayPal)</a></form>
+</div>
+
+<div style="margin-top: 50px;">
+    Trigger:<br>
+    <a href="#" data-toggle="tooltip" data-trigger="click" class="btn btn-secondary">Click</a>
+    <a href="#" data-toggle="tooltip" data-trigger="hover" class="btn btn-secondary">Hover</a>
+    <a href="#" data-toggle="tooltip" data-trigger="focus" class="btn btn-secondary">Focus</a>
+    <a href="#" data-toggle="tooltip" data-trigger="hoverfocus" class="btn btn-secondary">HoverFocus</a>
+</div>
+
+<div style="margin-top: 50px;">
+    Backdrops (only works with click trigger):<br>
+    <a href="#" data-toggle="tooltip" data-trigger="click" data-backdrop="black" class="btn btn-secondary">Black</a>
+    <a href="#" data-toggle="tooltip" data-trigger="click" data-backdrop="white" class="btn btn-secondary">White</a>
+    <a href="#" data-toggle="tooltip" data-trigger="click" data-backdrop="blurred" class="btn btn-secondary">Blurred</a>
+</div>
+
+<div style="margin-top: 50px" class="text-center">
+    <table class="table" style="max-width: 500px; display: inline-block;">
+        <tr>
+            <th colspan="2"></th>
+            <th colspan="4" style="text-align: center;">Preferred Placement</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Top</td>
+            <td>Bottom</td>
+            <td>Left</td>
+            <td>Right</td>
+        </tr>
+        <tr>
+            <th rowspan="4" style="vertical-align: middle">Sizes</th>
+            <td>Tiny</td>
+            <td><a href="#" data-toggle="tooltip" data-size="tiny" data-position="top" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+            <td><a href="#" data-toggle="tooltip" data-size="tiny" data-position="bottom" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+            <td><a href="#" data-toggle="tooltip" data-size="tiny" data-position="left" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+            <td><a href="#" data-toggle="tooltip" data-size="tiny" data-position="right" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+        </tr>
+        <tr>
+            <td>Small</td>
+            <td><a href="#" data-toggle="tooltip" data-size="small" data-position="top" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+            <td><a href="#" data-toggle="tooltip" data-size="small" data-position="bottom" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+            <td><a href="#" data-toggle="tooltip" data-size="small" data-position="left" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+            <td><a href="#" data-toggle="tooltip" data-size="small" data-position="right" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+        </tr>
+        <tr>
+            <td>Medium</td>
+            <td><a href="#" data-toggle="tooltip" data-size="medium" data-position="top" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+            <td><a href="#" data-toggle="tooltip" data-size="medium" data-position="bottom" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+            <td><a href="#" data-toggle="tooltip" data-size="medium" data-position="left" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+            <td><a href="#" data-toggle="tooltip" data-size="medium" data-position="right" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+        </tr>
+        <tr>
+            <td>Large</td>
+            <td><a href="#" data-toggle="tooltip" data-size="large" data-position="top" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+            <td><a href="#" data-toggle="tooltip" data-size="large" data-position="bottom" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+            <td><a href="#" data-toggle="tooltip" data-size="large" data-position="left" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+            <td><a href="#" data-toggle="tooltip" data-size="large" data-position="right" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+        </tr>
+    </table>
+
+    <table class="table table-inline" style="max-width: 500px; display: inline-block;">
+        <tr>
+            <th colspan="2"></th>
+            <th colspan="4" style="text-align: center;">Themes</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Black</td>
+            <td>White</td>
+        </tr>
+        <tr>
+            <th rowspan="4" style="vertical-align: middle">Sizes</th>
+            <td>Tiny</td>
+            <td><a href="#" data-toggle="tooltip" data-theme="black" data-size="tiny" data-position="top" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+            <td><a href="#" data-toggle="tooltip" data-theme="white" data-size="tiny" data-position="top" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+        </tr>
+        <tr>
+            <td>Small</td>
+            <td><a href="#" data-toggle="tooltip" data-theme="black" data-size="small" data-position="top" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+            <td><a href="#" data-toggle="tooltip" data-theme="white" data-size="small" data-position="top" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+        </tr>
+        <tr>
+            <td>Medium</td>
+            <td><a href="#" data-toggle="tooltip" data-theme="black" data-size="medium" data-position="top" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+            <td><a href="#" data-toggle="tooltip" data-theme="white" data-size="medium" data-position="top" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+        </tr>
+        <tr>
+            <td>Large</td>
+            <td><a href="#" data-toggle="tooltip" data-theme="black" data-size="large" data-position="top" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+            <td><a href="#" data-toggle="tooltip" data-theme="white" data-size="large" data-position="top" class="btn btn-secondary"><i class="fa fa-hand-pointer-o"></i></a></td>
+        </tr>
+    </table>
+</div>
+
+<div style="text-align: center;">
+    <br><br><hr>
+    <h2>Documentation</h2>
+    <hr><br>
+
+    <h4>All options and events with defaults:</h4>
+    <div>
+        <pre style="display:inline-block;width:800px;max-width:100%; text-align:left;"><code class="javascript">
+    $(function(){
+      $('[data-toggle="tooltip"]').jTippy({
+            //string: overridden by the title attribute
+            title: '',
+            //string ('click', 'hover', 'focus', 'hoverfocus'): defines when the tooltip should be shown
+            trigger: 'hoverfocus',
+            //string ('auto','top','bottom','left','right'): preferred location of the tooltip (defaults to auto if no space)
+            position: 'auto',
+            //string ('black', 'white')
+            theme: 'black',
+            //string ('tiny', 'small', 'medium', 'large')
+            size: 'small',
+            //string|false ('black', 'white', 'blurred'): Only works with trigger: "click"
+            backdrop: false,
+            //string: class(es) to add to the tooltip
+            'class': ''
+      }).on('jt-show', function(e, tooltip){
+          //triggered on show of tooltip
+          //tooltip dom element is passed as the second parameter
+      }).on('jt-hide', function(e){
+          //triggered on hide of tooltip
+      });
+    });
+        </code></pre>
+    </div>
+</div>
+
+<div style="margin-top: 10px; margin-bottom: 100px; text-align: center;">
+    <div style="max-width: 800px;display:inline-block; ">
+        <h4>All options can be set globally:</h4>
+        <div>
+            <pre style="text-align:left;width:800px;max-width:100%;"><code class="javascript">
+    $.jTippy.defaults.backdrop = false;
+    $.jTippy.defaults.theme = 'black';
+    $.jTippy.defaults.trigger = 'hover';
+            </code></pre>
+        </div>
+
+        <h4>All options can be set with data attributes:</h4>
+        <pre style="text-align:left;width:800px;max-width:100%;"><code class="html">
+    &lt;a href='#'
+       data-toggle="tooltip"
+       data-backdrop="black">
+        Black backdrop!
+    &lt;/a>
+            </code></pre>
+        <div>
+            <pre style="text-align:left;width:800px;max-width:100%;"><code class="javascript">
+    $('[data-toggle="tooltip"]').jTippy();
+            </code></pre>
+        </div>
+        <a href="https://github.com/HTMLGuyLLC/jTippy" class="btn btn-success">Learn more on Github</a>
+
+    </div>
+</div>
+
+<!-- jQuery and script -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="jTippy.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Demos -->
+<script>
+    $(function(){
+        $('[data-toggle="tooltip"]').jTippy({
+            title:'Hey! I\'m a tooltip!'
+        }).on('jt-show', function(e, tooltip){
+            console.log('Shown');
+            console.log(tooltip);
+        }).on('jt-hide', function(){
+            console.log('Hidden');
+        });
+    })
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126490722-5"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-126490722-5');
+</script>
+
+</body>
+</html>
