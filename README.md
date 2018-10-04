@@ -17,7 +17,7 @@ Features
 =======
 * Multiple Triggers (click, hover, focus, hoverfocus)
 * Backdrops (black, white, blurred) - Only apply to trigger:'click'
-* Themes (black, white)
+* Themes (black, lt-gray, white, blue, green, red)
 * Sizes (tiny, small, medium, large)
 * Responsive (prefers the specified position, if it doesn't fit, it attempts to make it smaller by stacking the question and buttons, if it doesn't fit, it tries the "auto" setting, if it still doesn't fit, it shows as a modal in the middle of the screen)
 * Tooltip hide/show events
