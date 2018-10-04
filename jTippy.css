@@ -90,7 +90,7 @@
 {
     border-right-color: #444444;
     border-width: 15px;
-    left: -15px;
+    left: -14px;
     right: auto;
     bottom: auto;
     top: 50%;
@@ -100,7 +100,7 @@
 .jt-arrow-right
 {
     border-left-color: #444444;
-    right: -30px;
+    right: -29px;
     left: auto;
     bottom: auto;
     border-width: 15px;
