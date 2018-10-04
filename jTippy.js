@@ -82,11 +82,11 @@
                     }
                     else if( existing.trigger === 'hoverfocus' )
                     {
-                        existing.dom_wrapped.off('focus', existing.show);
-                        existing.dom_wrapped.off('blur', existing.hide);
+                        existing.dom_wrapped.off('focus', existing.hoverfocusFocusShow);
+                        existing.dom_wrapped.off('blur', existing.hoverfocusBlur);
 
                         existing.dom_wrapped.off('mouseenter', existing.show);
-                        existing.dom_wrapped.off('mouseleave', existing.hide);
+                        existing.dom_wrapped.off('mouseleave', existing.hoverfocusHide);
                     }
 
                     //attach resize handler to reposition tooltip
@@ -121,8 +121,8 @@
                 }
                 else if( helper.trigger === 'hoverfocus' )
                 {
-                    helper.dom_wrapped.on('focus', helper.show);
-                    helper.dom_wrapped.on('blur', helper.hide);
+                    helper.dom_wrapped.on('focus', helper.hoverfocusFocusShow);
+                    helper.dom_wrapped.on('blur', helper.hoverfocusBlur);
 
                     helper.dom_wrapped.on('mouseenter', helper.show);
                     helper.dom_wrapped.on('mouseleave', helper.hoverfocusHide);
@@ -134,14 +134,25 @@
                 //return dom for chaining of event handlers and such
                 return helper.dom;
             },
-            //prevent hiding a tooltip on mouseleave if the elemnent is still focused
+            //add class when focused for hoverfocus - this way mouseleave can detect if focused or not
+            //document.activeElement isn't working to detect focus
+            hoverfocusFocusShow: function(){
+                helper.dom_wrapped.addClass('jt-focused');
+                helper.dom_wrapped.show();
+            },
+            //remove class on blur for hoverfocus
+            hoverfocusBlur: function(){
+                helper.dom_wrapped.removeClass('jt-focused');
+                helper.hide();
+            },
+            //prevent hiding a tooltip on mouseleave if the element is still focused
             hoverfocusHide: function(){
-                if( typeof document.activeElement !== 'undefined' &&
-                    document.activeElement.length === 1 &&
-                    document.activeElement[0] !== helper.dom )
+                //don't hide if focused. Hide on blur instead.
+                if( helper.dom_wrapped.hasClass('jt-focused') )
                 {
-                    helper.hide();
+                    return false;
                 }
+                helper.hide();
             },
             //on click of element, prevent default
             preventDefaultHandler: function(e){
