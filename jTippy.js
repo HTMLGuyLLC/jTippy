@@ -50,6 +50,8 @@
             class: options.class,
             backdrop: options.backdrop,
             position: options.position,
+            close_on_outside_click: options.close_on_outside_click,
+            singleton: options.singleton,
             dataAttr: 'jTippy',
             //create tooltip html
             createTooltipHTML: function(){
@@ -128,6 +130,12 @@
                     helper.dom_wrapped.on('mouseleave', helper.hoverfocusHide);
                 }
 
+                if( !$.jTippy.body_click_initialized )
+                {
+                    $(document).on('touchstart mousedown', helper.onClickOutside);
+                    $.jTippy.bodyClickInitialized = true;
+                }
+
                 //attach to dom for easy access later
                 helper.dom_wrapped.data(helper.dataAttr, helper);
 
@@ -174,7 +182,10 @@
                     return false;
                 }
 
-                helper.hideAllVisible();
+                if( helper.singleton )
+                {
+                    helper.hideAllVisible();
+                }
 
                 //cache reference to the body
                 const body = $('body');
@@ -193,19 +204,11 @@
                 //add the tooltip to the dom
                 body.append(helper.createTooltipHTML());
                 //cache tooltip
-                helper.tooltip = $('.jtippy');
+                helper.tooltip = $('.jtippy:last');
                 //position it
                 helper.positionTooltip();
                 //attach resize handler to reposition tooltip
                 $(window).on('resize', helper.onResize);
-                //add on click to body to hide
-                if( helper.trigger === 'click' ){
-                    //using mousedown and touchstart means it will be prioritized ahead
-                    //of any existing click handlers on an element and close the tooltip
-                    //for many reasons people bind to click and preventDefault which would
-                    //stop this from being called
-                    $(document).on('touchstart mousedown', helper.onClickOutside);
-                }
                 //give the tooltip an id so we can set accessibility props
                 const id = 'jTippy'+Date.now();
                 helper.tooltip.attr('id', id);
@@ -234,10 +237,6 @@
             hide: function(trigger_event){
                 //remove scroll handler to reposition tooltip
                 $(window).off('resize', helper.onResize);
-                //remove body on click outside
-                if( helper.trigger === 'click' ) {
-                    $(document).off('touchstart mousedown', helper.onClickOutside);
-                }
                 //remove accessbility props
                 helper.dom.attr('aria-describedby', null);
                 //remove from dom
@@ -273,7 +272,13 @@
                 const target = $(e.target);
                 if( !target.hasClass('jtippy') && !target.parents('.jtippy:first').length )
                 {
-                    helper.hideAllVisible();
+                    $.each($.jTippy.visible, function(index, helper){
+                        if( typeof helper !== 'undefined' ) {
+                            if (helper.trigger === 'click' && helper.close_on_outside_click) {
+                                helper.hide();
+                            }
+                        }
+                    });
                 }
             },
             //position tooltip based on where the clicked element is
@@ -462,6 +467,7 @@
 
     $.jTippy = {};
     $.jTippy.visible = [];
+    $.jTippy.body_click_initialized = false;
     $.jTippy.defaults = {
         title: '',
         trigger: 'hoverfocus',
@@ -469,7 +475,9 @@
         class: '',
         theme: 'black',
         size: 'small',
-        backdrop: false
+        backdrop: false,
+        singleton: true,
+        close_on_outside_click: true,
     }
 
 })(jQuery);

@@ -80,7 +80,11 @@ $(function(){
         //string|false ('black', 'white', 'blurred'): Only works with trigger: "click"
         backdrop: false,
         //string: class(es) to add to the tooltip
-        class: ''
+        class: '',
+        //boolean: if true, when this tooltip is triggered, all others will hide
+        singleton: true,
+        //boolean: if true, when clicking outside a tooltip that has trigger:"click", it will hide that tooltip
+        close_on_outside_click: true,
   }).on('jt-show', function(e, tooltip){
       //triggered on show of tooltip
       //tooltip dom element is passed as the second parameter
