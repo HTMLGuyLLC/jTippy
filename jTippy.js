@@ -74,21 +74,26 @@
                     }
                     else if( existing.trigger === 'focus' )
                     {
-                        existing.dom_wrapped.off('focus', existing.show);
-                        existing.dom_wrapped.off('blur', existing.hide);
+                        existing.dom_wrapped.off('touchstart focus', existing.show);
+                        existing.dom_wrapped.off('touchend blur', existing.hide);
                     }
                     else if( existing.trigger === 'hover' )
                     {
-                        existing.dom_wrapped.off('mouseenter', existing.show);
-                        existing.dom_wrapped.off('mouseleave', existing.hide);
+                        existing.dom_wrapped.off('touchstart mouseenter', existing.show);
+                        existing.dom_wrapped.off('touchend mouseleave', existing.hide);
                     }
                     else if( existing.trigger === 'hoverfocus' )
                     {
                         existing.dom_wrapped.off('focus', existing.hoverfocusFocusShow);
                         existing.dom_wrapped.off('blur', existing.hoverfocusBlur);
 
-                        existing.dom_wrapped.off('mouseenter', existing.show);
-                        existing.dom_wrapped.off('mouseleave', existing.hoverfocusHide);
+                        existing.dom_wrapped.off('touchstart mouseenter', existing.show);
+                        existing.dom_wrapped.off('touchend mouseleave', existing.hoverfocusHide);
+                    }
+
+                    //hide on click if not click
+                    if( existing.trigger !== 'click' ) {
+                        existing.dom_wrapped.off('touchstart mousedown', helper.hide);
                     }
 
                     //attach resize handler to reposition tooltip
@@ -102,7 +107,7 @@
                 }
             },
             //initialize the plugin on this element
-            initialize: function(){
+            initialize: function() {
                 //attach on handler to show tooltip
                 //use touchstart and mousedown just like if you click outside the tooltip to close it
                 //this way it blocks the hide if you click the button a second time to close the tooltip
@@ -113,21 +118,26 @@
                 }
                 else if( helper.trigger === 'focus' )
                 {
-                    helper.dom_wrapped.on('focus', helper.show);
-                    helper.dom_wrapped.on('blur', helper.hide);
+                    helper.dom_wrapped.on('touchstart focus', helper.show);
+                    helper.dom_wrapped.on('touchend blur', helper.hide);
                 }
                 else if( helper.trigger === 'hover' )
                 {
-                    helper.dom_wrapped.on('mouseenter', helper.show);
-                    helper.dom_wrapped.on('mouseleave', helper.hide);
+                    helper.dom_wrapped.on('touchstart mouseenter', helper.show);
+                    helper.dom_wrapped.on('touchend mouseleave', helper.hide);
                 }
                 else if( helper.trigger === 'hoverfocus' )
                 {
                     helper.dom_wrapped.on('focus', helper.hoverfocusFocusShow);
                     helper.dom_wrapped.on('blur', helper.hoverfocusBlur);
 
-                    helper.dom_wrapped.on('mouseenter', helper.show);
-                    helper.dom_wrapped.on('mouseleave', helper.hoverfocusHide);
+                    helper.dom_wrapped.on('touchstart mouseenter', helper.show);
+                    helper.dom_wrapped.on('touchend mouseleave', helper.hoverfocusHide);
+                }
+
+                //hide on click if not click
+                if( helper.trigger !== 'click' ) {
+                    helper.dom_wrapped.on('touchstart mousedown', helper.hide);
                 }
 
                 if( !$.jTippy.body_click_initialized )
@@ -165,7 +175,6 @@
             //on click of element, prevent default
             preventDefaultHandler: function(e){
                 e.preventDefault();
-                //prevent click following href
                 return false;
             },
             //toggle tooltip visibility (used for click event)
