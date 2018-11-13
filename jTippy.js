@@ -91,11 +91,6 @@
                         existing.dom_wrapped.off('touchend mouseleave', existing.hoverfocusHide);
                     }
 
-                    //hide on click if not click
-                    if( existing.trigger !== 'click' ) {
-                        existing.dom_wrapped.off('touchstart mousedown', helper.hide);
-                    }
-
                     //attach resize handler to reposition tooltip
                     $(window).off('resize', existing.onResize);
 
@@ -263,6 +258,10 @@
                 //trigger hide event
                 if( typeof trigger_event === 'undefined' || trigger_event ) {
                     helper.dom.trigger('jt-hide');
+                }
+                //hide on click if not click
+                if( helper.trigger !== 'click' ) {
+                    helper.dom_wrapped.off('touchstart mousedown', helper.hide);
                 }
                 //remove from open array
                 var index = $.inArray(helper, $.jTippy.visible);
