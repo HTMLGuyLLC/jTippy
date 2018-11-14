@@ -23,8 +23,19 @@
             return false;
         }
 
+        const dom_wrapped = $(this);
+
         //get list of options
-        options = $.extend({}, $.jTippy.defaults, options, $(this).data());
+        options = $.extend({}, $.jTippy.defaults, options, dom_wrapped.data());
+
+        //get title attribute
+        let title = dom_wrapped.attr('title');
+
+        //if exists, override defaults
+        if( typeof title !== 'undefined' && title.length )
+        {
+            options.title = title;
+        }
 
         //add theme class
         options.class += ' jt-'+options.theme+'-theme';
@@ -42,7 +53,7 @@
 
         let helper = {
             dom: this,
-            dom_wrapped: $(this),
+            dom_wrapped: dom_wrapped,
             position_debug: options.position_debug,
             trigger: options.trigger,
             title: options.title,
