@@ -166,7 +166,7 @@
             },
             //remove class on blur for hoverfocus
             hoverfocusBlur: function(){
-                if( helper.dom_wrapped.length ) {
+                if( helper.dom_wrapped && helper.dom_wrapped.length ) {
                     helper.dom_wrapped.removeClass('jt-focused');
                 }
                 helper.hide();
@@ -257,7 +257,7 @@
                 //remove accessbility props
                 helper.dom.attr('aria-describedby', null);
                 //remove from dom
-                if( helper.tooltip.length ) {
+                if( helper.tooltip && helper.tooltip.length ) {
                     helper.tooltip.remove();
                 }
                 //remove blurring to body
@@ -332,7 +332,7 @@
                         'margin-left': -(tooltip_width / 2),
                         'margin-top': -(tooltip_height / 2)
                     });
-                    if( arrow.length ) {
+                    if( arrow && arrow.length ) {
                         arrow.remove();
                     }
                     helper.positionDebug('-- Done positioning --');
