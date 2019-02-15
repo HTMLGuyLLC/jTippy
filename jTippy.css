@@ -37,6 +37,8 @@
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    top: 0;
+    left:0;
 }
 /* Centers the tooltip on screens where it won't fit */
 .jt-centered
