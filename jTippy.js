@@ -369,6 +369,11 @@
                 let elem_height = helper.dom_wrapped.outerHeight();
                 let elem_width = helper.dom_wrapped.outerWidth();
 
+                //in debug mode, display all details, prior to margin adjustment
+                helper.positionDebug({
+                    'Clicked Element Pre-Margin': {'Left': elem_position.left, 'Top': elem_position.top},
+                });
+
                 //we need to take margins into consideration with positioning
                 //Tried outerHeight(true) and outerWidth(true) and it didn't work correctly
                 let elem_marg_left = parseInt(helper.dom_wrapped.css('marginLeft').replace('px', ''));
