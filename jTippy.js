@@ -309,6 +309,14 @@
 
                 helper.positionDebug('-- Start positioning --');
 
+                //if no longer exists
+                if( !helper.dom_wrapped.length )
+                {
+                    helper.positionDebug('Elem no longer exists. Removing tooltip');
+
+                    helper.hide(true);
+                }
+
                 //cache reference to arrow
                 let arrow = helper.tooltip.find('.jt-arrow');
 
