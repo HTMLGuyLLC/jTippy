@@ -157,7 +157,7 @@
             //document.activeElement isn't working to detect focus
             hoverfocusFocusShow: function(){
                 helper.dom_wrapped.addClass('jt-focused');
-                helper.dom_wrapped.show();
+                helper.show();
             },
             //remove class on blur for hoverfocus
             hoverfocusBlur: function(){
