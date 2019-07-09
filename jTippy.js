@@ -295,10 +295,10 @@
                 const target = $(e.target);
                 if( !target.hasClass('jtippy') && !target.parents('.jtippy:first').length )
                 {
-                    $.each($.jTippy.visible, function(index, helper){
-                        if( typeof helper !== 'undefined' ) {
-                            if (helper.trigger === 'click' && helper.close_on_outside_click) {
-                                helper.hide();
+                    $.each($.jTippy.visible, function(index, jTippy){
+                        if( typeof jTippy !== 'undefined' ) {
+                            if (jTippy.close_on_outside_click) {
+                                jTippy.hide();
                             }
                         }
                     });
