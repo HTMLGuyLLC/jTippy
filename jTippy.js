@@ -241,7 +241,10 @@
             //hide all visible tooltips
             hideAllVisible: function(){
                 $.each($.jTippy.visible, function(index, jTippy){
-                    jTippy.hide();
+                    //if it's not a focus/hoverfocus tooltip with focus currently, hide it
+                    if( !jTippy.dom_wrapped.hasClass('jt-focus') ){
+                        jTippy.hide();
+                    }
                 });
                 return this;
             },
