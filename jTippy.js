@@ -297,7 +297,9 @@
                 {
                     $.each($.jTippy.visible, function(index, jTippy){
                         if( typeof jTippy !== 'undefined' ) {
-                            if (jTippy.close_on_outside_click) {
+                            //if close on click AND target is NOT the trigger element OR it is the trigger element,
+                            // but the trigger is not focus/hoverfocus (since on click focus is granted in those cases and the tooltip should be displayed)
+                            if (jTippy.close_on_outside_click && (target !== jTippy.dom_wrapped || (jTippy.trigger !== 'focus' && jTippy.trigger !== 'hoverfocus')) ) {
                                 jTippy.hide();
                             }
                         }
