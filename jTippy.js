@@ -141,11 +141,6 @@
                     helper.dom_wrapped.on('touchend mouseleave', helper.hoverfocusHide);
                 }
 
-                //hide on click if not click
-                if( helper.trigger !== 'click' ) {
-                    helper.dom_wrapped.on('touchstart mousedown', helper.hide);
-                }
-
                 if( !$.jTippy.body_click_initialized )
                 {
                     $(document).on('touchstart mousedown', helper.onClickOutside);
