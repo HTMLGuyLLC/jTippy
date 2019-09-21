@@ -1,7 +1,11 @@
 {
   "name": "jtippy",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "jQuery tooltip plugin",
+  "author": { 
+    "name" : "HTMLGuy, LLC", 
+    "url" : "https://htmlguy.com"
+  },
   "main": "jTippy.min.js",
   "repository": {
     "type": "git",
@@ -13,10 +17,7 @@
   "homepage": "https://htmlguyllc.github.io/jTippy/",
   "private": false,
   "dependencies": {
-    "jquery": "^3.0.0"
+    "jquery": "^3.4.0"
   },
-  "license": {
-    "type": "MIT",
-    "url": "https://www.opensource.org/licenses/mit-license.php"
-  }
+  "license": "MIT"
 }

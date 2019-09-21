@@ -85,9 +85,10 @@ $(function(){
         singleton: true,
         //boolean: if true and trigger: 'click', when clicking outside the tooltip, it will be hidden
         close_on_outside_click: true,
-  }).on('jt-show', function(e, tooltip){
+  }).on('jt-show', function(e, tooltip, hide){
       //triggered on show of tooltip
-      //tooltip dom element is passed as the second parameter
+      //the tooltip's jquery dom object is provided as the second param
+      //to hide the tooltip, run hide()
   }).on('jt-hide', function(e){
       //triggered on hide of tooltip
   });

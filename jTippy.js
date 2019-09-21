@@ -229,9 +229,7 @@
                 $.jTippy.visible.push(helper);
                 //trigger event on show and pass the tooltip
                 if( typeof trigger_event === 'undefined' || trigger_event ) {
-                    helper.dom.trigger('jt-show', {
-                        'tooltip': helper.tooltip
-                    });
+                    helper.dom.trigger('jt-show', [helper.tooltip, helper.hide]);
                 }
             },
             //is this tooltip visible
