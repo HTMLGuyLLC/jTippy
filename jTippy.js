@@ -231,11 +231,10 @@
                 if( typeof trigger_event === 'undefined' || trigger_event ) {
                     helper.dom.trigger('jt-show', [helper.tooltip, helper.hide]);
                 }
-                //if the trigger is modified, reposition tooltip (hides if no longer exists)
-                /** @Todo: Get this working correctly */
-                // helper.dom_wrapped.parent().on('DOMSubtreeModified', helper.positionTooltip);
+                //if the trigger element is modified, reposition tooltip (hides if no longer exists or invisible)
                 //if tooltip is modified, trigger reposition
-                helper.tooltip.on('DOMSubtreeModified', helper.positionTooltip);
+                //this is admittedly inefficient, but it's only listening when the tooltip is open
+                $('body').on('DOMSubtreeModified', helper.positionTooltip);
             },
             //is this tooltip visible
             isVisible: function(){
@@ -253,11 +252,8 @@
             },
             //hides the tooltip for this element
             hide: function(trigger_event){
-                //if the trigger is modified, reposition tooltip (hides if no longer exists)
-                /** @Todo: Get this working correctly */
-                // helper.dom_wrapped.parent().off('DOMSubtreeModified', helper.positionTooltip);
-                //if tooltip is modified, trigger reposition
-                helper.tooltip.off('DOMSubtreeModified', helper.positionTooltip);
+                //remove the dom modification handler
+                $('body').off('DOMSubtreeModified', helper.positionTooltip);
                 //remove scroll handler to reposition tooltip
                 $(window).off('resize', helper.onResize);
                 //remove accessbility props
@@ -317,8 +313,8 @@
 
                 helper.positionDebug('-- Start positioning --');
 
-                //if no longer exists
-                if( !helper.dom_wrapped.length )
+                //if no longer exists or is no longer visible
+                if( !helper.dom_wrapped.length || !helper.dom_wrapped.is(":visible") )
                 {
                     helper.positionDebug('Elem no longer exists. Removing tooltip');
 
