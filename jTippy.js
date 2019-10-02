@@ -231,6 +231,11 @@
                 if( typeof trigger_event === 'undefined' || trigger_event ) {
                     helper.dom.trigger('jt-show', [helper.tooltip, helper.hide]);
                 }
+                //if the trigger is modified, reposition tooltip (hides if no longer exists)
+                /** @Todo: Get this working correctly */
+                // helper.dom_wrapped.parent().on('DOMSubtreeModified', helper.positionTooltip);
+                //if tooltip is modified, trigger reposition
+                helper.tooltip.on('DOMSubtreeModified', helper.positionTooltip);
             },
             //is this tooltip visible
             isVisible: function(){
@@ -248,6 +253,11 @@
             },
             //hides the tooltip for this element
             hide: function(trigger_event){
+                //if the trigger is modified, reposition tooltip (hides if no longer exists)
+                /** @Todo: Get this working correctly */
+                // helper.dom_wrapped.parent().off('DOMSubtreeModified', helper.positionTooltip);
+                //if tooltip is modified, trigger reposition
+                helper.tooltip.off('DOMSubtreeModified', helper.positionTooltip);
                 //remove scroll handler to reposition tooltip
                 $(window).off('resize', helper.onResize);
                 //remove accessbility props
