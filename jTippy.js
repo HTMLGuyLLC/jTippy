@@ -57,6 +57,7 @@
             position_debug: options.position_debug,
             trigger: options.trigger,
             title: options.title,
+            content: options.title,
             theme: options.theme,
             class: options.class,
             backdrop: options.backdrop,
@@ -66,7 +67,7 @@
             dataAttr: 'jTippy',
             //create tooltip html
             createTooltipHTML: function(){
-                return `<div class='jtippy ${helper.class}' role='tooltip'><div class='jt-arrow'></div><div class='jt-title'>${helper.title}</div></div>`;
+                return `<div class='jtippy ${helper.class}' role='tooltip'><div class='jt-arrow'></div><div class='jt-title'>${helper.content}</div></div>`;
             },
             //creates backdrop html if necessary
             createBackdropHTML: function(){
@@ -212,6 +213,10 @@
                 else if( helper.backdrop )
                 {
                     body.append(helper.createBackdropHTML());
+                }
+                //get string from function
+                if( typeof trigger_event === 'undefined' || trigger_event ){
+                    if( typeof helper.title === 'function' ) helper.content = title();
                 }
                 //add the tooltip to the dom
                 body.append(helper.createTooltipHTML());

@@ -67,7 +67,7 @@ Defaults are shown
 ```javascript
 $(function(){
   $('[data-toggle="tooltip"]').jTippy({
-        //string: overridden by the title attribute
+        //string/function returning string: overridden by the title attribute - function is run every time the tooltip is displayed and can be used to grab content via XHR/AJAX 
         title: '',
         //string ('click', 'hover', 'focus', 'hoverfocus'): defines when the tooltip should be shown
         trigger: 'hoverfocus',
