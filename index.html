@@ -180,7 +180,7 @@
         <pre style="display:inline-block;width:800px;max-width:100%; text-align:left;"><code class="javascript">
     $(function(){
       $('[data-toggle="tooltip"]').jTippy({
-            //string/function returning string: overridden by the title attribute - function is run every time the tooltip is displayed and can be used to grab content via XHR/AJAX
+            //string/function(btn, jtippy):string - overridden by the title attribute - function is run every time the tooltip is displayed and can be used to grab content via XHR/AJAX
             title: '',
             //string ('click', 'hover', 'focus', 'hoverfocus'): defines when the tooltip should be shown
             trigger: 'hoverfocus',

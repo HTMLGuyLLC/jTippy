@@ -216,7 +216,7 @@
                 }
                 //get string from function
                 if( typeof trigger_event === 'undefined' || trigger_event ){
-                    if( typeof helper.title === 'function' ) helper.content = helper.title();
+                    if( typeof helper.title === 'function' ) helper.content = helper.title(helper.dom_wrapped, helper);
                 }
                 //add the tooltip to the dom
                 body.append(helper.createTooltipHTML());
